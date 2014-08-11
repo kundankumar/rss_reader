@@ -7,3 +7,8 @@ Features
 * A reader page – fetches latest posts from all feeds and combine them together. Sort by date – most recent first and displays title only.
 * Clicking on title will open original article page in new tab.
 
+Development Tools
+---------------
+Ruby 2.0.0
+Rails 4.0.0
+Sqlite3
