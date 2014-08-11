@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RssReader</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+<ul><h2>
+<li style="display:inline;"><%=  link_to "Home", "#{rss_feeds_path}" %></li>&nbsp;&nbsp;|&nbsp; 
+<li style="display:inline;"><%=  link_to "All Latest Posts", "#{rss_posts_path}" %></li>
+</h2></ul>
+</div>
+<div>
+<%= yield %>
+</div>
+</body>
+</html>

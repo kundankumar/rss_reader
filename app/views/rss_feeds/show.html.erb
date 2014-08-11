@@ -1,0 +1,15 @@
+<h3>RSS feed Info</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @title %>
+</p>
+<p>
+  <strong>Source url:</strong>
+  <%= @rss_feed.source_url %>
+</p>
+
+<%= link_to 'Edit', edit_rss_feed_path(@rss_feed) %> |
+<%= link_to 'Back', rss_feeds_path %>

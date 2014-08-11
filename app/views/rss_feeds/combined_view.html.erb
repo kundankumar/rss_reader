@@ -1,0 +1,26 @@
+<h3>Combined RSS Posts</h1>
+<% unless @rss_feed_posts.blank? %>
+<table>
+  <thead>
+    <tr>
+      <th>Titles</th>
+      <th>&nbsp;</th>
+      <th>Pub. Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rss_feed_posts.each do |post| %>
+      <tr>
+        <td><%= link_to "#{post.title}", "#{post.link}", target: "_blank" %></td>
+        <td>&nbsp;</td>
+        <td><%= custom_timestamp(post.pubDate) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<p>
+  <strong>No Feed URLS added.</strong>
+</p>
+<% end %>

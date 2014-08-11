@@ -1,0 +1,33 @@
+<h3>Listing RSS feeds</h1>
+<% unless @rss_feeds.blank? %>
+<table>
+  <thead>
+    <tr>
+      <th>Titles</th>
+      <th>&nbsp;</th>
+      <th colspan="3"> Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rss_feeds.each do |url, rss_feed| %>
+      <% rss_feed_instance = find_feed_by_link(url) %>
+      <tr>
+        <td><%= rss_feed.title %></td>
+        <td>&nbsp;</td>
+        <td><%= link_to 'Show', rss_feed_instance %></td>
+        <td><%= link_to 'Edit', edit_rss_feed_path(rss_feed_instance) %></td>
+        <td><%= link_to 'Destroy', rss_feed_instance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<p>
+  <strong>No Feed URLS added.</strong>
+</p>
+<% end %>
+
+<br>
+
+<%= link_to 'New RSS feed', new_rss_feed_path %>
